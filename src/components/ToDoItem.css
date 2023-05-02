@@ -1,0 +1,27 @@
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.task-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox > button {
+  width: 8rem;
+  height: 2rem;
+}
+input[type="checkbox"] {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+

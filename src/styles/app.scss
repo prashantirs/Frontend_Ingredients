@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 25px;
+}
+input:focus{
+    outline: none;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #281a43;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    height: 50px;
+}
+button:hover{
+    background-color: #372756;
+}
+.login-form{
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+.card{
+    width: 30vw;
+    margin: 0 auto;
+    margin-top: 40px;
+}
