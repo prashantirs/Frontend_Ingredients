@@ -16,8 +16,12 @@
 }
 
 .task-checkbox > button {
+  display: flex;
   width: 8rem;
   height: 2rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  align-items: center;
 }
 input[type="checkbox"] {
   width: 1.5rem;

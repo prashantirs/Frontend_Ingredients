@@ -9,6 +9,8 @@ import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Context, server } from "./main";
 
+// FRONTEND_URL = http://localhost:5173    https://frontend-ingredients.vercel.app
+
 function App() {
   const { setUser, setIsAuthenticated, isAuthenticated, loading, setLoading } =
     useContext(Context);
