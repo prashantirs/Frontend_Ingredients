@@ -31,6 +31,11 @@ button{
 button:hover{
     background-color: #372756;
 }
+button:disabled{
+    background-color: #ccc;
+    color: #fff;
+    cursor: not-allowed;
+}   
 .login-form{
     width: 60%;
     margin: 0 auto;

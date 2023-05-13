@@ -8,8 +8,9 @@ import { Toaster } from "react-hot-toast";
 import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Context, server } from "./main";
+import Loader from "./components/Loader";
 
-// FRONTEND_URL = http://localhost:5173    https://frontend-ingredients.vercel.app
+// FRONTEND_URL = http://localhost:5173    https://frontend-ingredients.vercel.app 
 
 function App() {
   const { setUser, setIsAuthenticated, isAuthenticated, loading, setLoading } =

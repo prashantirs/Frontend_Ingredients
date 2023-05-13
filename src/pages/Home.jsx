@@ -4,6 +4,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import ToDoItem from "../components/ToDoItem";
+import Loader from "../components/Loader";
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -11,7 +12,7 @@ const Home = () => {
   const [description, setDescription] = useState("");
   const [refresh, setRefresh] = useState(false);
 
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated,loading, setLoading } = useContext(Context);
 
   const updateHandler =  async(id) => {
     try {
@@ -38,6 +39,7 @@ const Home = () => {
   }
 
    const submitHandler = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const { data } = await axios.post(
@@ -51,9 +53,10 @@ const Home = () => {
         }
       );
       setRefresh((prev)=>{return !prev})
-      console.log(data);
+      setLoading(false);
       toast.success(data.message);
     } catch (error) {
+      setLoading(false);
       toast.error(error.response.data.message);
     }
   };
@@ -109,7 +112,7 @@ const Home = () => {
       <div className="listed-task">
         {tasks.map((task) => {
           return (
-           <ToDoItem key={task._id} id = {task._id} title={task.title} description={task.description} isCompleted={task.isCompleted}
+          <ToDoItem key={task._id} id = {task._id} title={task.title} description={task.description} isCompleted={task.isCompleted}
            updateHandler={updateHandler} deleteHandler={deleteHandler}
            />
           );

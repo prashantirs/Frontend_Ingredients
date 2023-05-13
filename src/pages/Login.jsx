@@ -8,9 +8,10 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated,loading, setLoading } = useContext(Context);
 
   const submitHandler = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
       const { data } = await axios.post(
@@ -24,8 +25,10 @@ const Login = () => {
         }
       );
       setIsAuthenticated(true);
+      setLoading(false);
       toast.success(data.message);
     } catch (error) {
+      setLoading(false);
       setIsAuthenticated(false);
       toast.error(error.response.data.message);
     }
@@ -59,7 +62,7 @@ const Login = () => {
               }}
               required
             />
-            <button type="submit">Login</button>
+            <button type="submit" disabled={loading}>Login</button>
           </form>
         </div>
         <h5> Or</h5>
