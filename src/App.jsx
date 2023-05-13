@@ -9,6 +9,7 @@ import { useContext, useEffect } from "react";
 import axios from "axios";
 import { Context, server } from "./main";
 import Loader from "./components/Loader";
+import NotFound from "./pages/NotFound";
 
 // FRONTEND_URL = http://localhost:5173    https://frontend-ingredients.vercel.app 
 
@@ -39,6 +40,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
       </Routes>
       <Toaster />
     </Router>

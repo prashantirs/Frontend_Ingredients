@@ -16,12 +16,14 @@
 }
 
 .task-checkbox > button {
-  display: flex;
-  width: 8rem;
-  height: 2rem;
-  padding-bottom: 1rem;
-  text-align: center;
-  align-items: center;
+  color: red;
+  background-color: transparent;
+  border: none;
+}
+.task-checkbox > button:hover {
+  color: rgb(226, 21, 21);
+  scale: 1.2;
+  background-color: transparent;
 }
 input[type="checkbox"] {
   width: 1.5rem;
@@ -29,3 +31,9 @@ input[type="checkbox"] {
 }
 
 
+@media (max-width: 1028px) {
+  .task {
+    width: 80%;
+    box-shadow: none;
+  }
+}

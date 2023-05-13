@@ -15,25 +15,31 @@ const Home = () => {
   const { isAuthenticated,loading, setLoading } = useContext(Context);
 
   const updateHandler =  async(id) => {
+    setLoading(true);
     try {
       const {data} = await axios.put(`${server}/task/${id}`,{},{
         withCredentials: true,
       });
       setRefresh((prev)=>( !prev))
+      setLoading(false);
       toast.success(data.message);
     } catch (error) {
+        setLoading(false);
        toast.error(error.response.data.message);
     }
   };
   
   const deleteHandler =  async(id) => {
+    setLoading(true);
     try {
       const {data} = await axios.delete(`${server}/task/${id}`,{
         withCredentials: true,
         });
         setRefresh((prev)=>( !prev))
+        setLoading(false);
         toast.success(data.message);
     } catch (error) {
+      etLoading(false);
       toast.error(error.response.data.message);
     }
   }
@@ -53,6 +59,8 @@ const Home = () => {
         }
       );
       setRefresh((prev)=>{return !prev})
+      setDescription("");
+      setTitle("");
       setLoading(false);
       toast.success(data.message);
     } catch (error) {
@@ -105,7 +113,7 @@ const Home = () => {
               }}
               required
             />
-            <button type="submit">Add Task</button>
+            <button type="submit" disabled={loading}>{loading ? <Loader/>:"Add Task"}</button>
           </form>
         </div>
       </div>

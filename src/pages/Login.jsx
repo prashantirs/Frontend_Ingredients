@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { Link, Navigate } from "react-router-dom";
 import { Context, server } from "../main";
 import axios from "axios";
+import Loader from "../components/Loader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -62,11 +63,11 @@ const Login = () => {
               }}
               required
             />
-            <button type="submit" disabled={loading}>Login</button>
+            <button type="submit" disabled={loading}>{loading ? <Loader/>:"Login"}</button>
           </form>
         </div>
         <h5> Or</h5>
-        <Link to={"/register"}>Sign Up</Link>
+        <Link to={"/register"} className="link-tag">Sign Up</Link>
       </div>
     </>
   );

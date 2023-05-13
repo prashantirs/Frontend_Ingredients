@@ -1,6 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
 *{
     margin: 0;
     padding: 0;
+    font-family: Inter, sans-serif;
+}
+body{
+    background-color: #f5f5f5;
+    
 }
 form{
     display: flex;
@@ -47,3 +53,17 @@ button:disabled{
     margin: 0 auto;
     margin-top: 40px;
 }
+.link-tag{
+    text-decoration: none;
+    color: #281a43;
+    font-weight: bold;
+}
+
+@media (max-width: 1028px) {
+    .login-form{
+        width: 90%;
+    }
+    .card{
+        width: 100%;
+    }
+  }

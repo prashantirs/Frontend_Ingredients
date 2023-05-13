@@ -3,9 +3,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 20px 25px;
-  background-color: rgb(72, 187, 225);
-  color: rgb(46, 17, 17);
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgb(49 51 50);
+  color: white;
+  font-size: 600;
 }
 
 .app-name {
@@ -14,19 +14,34 @@ nav {
 }
 
 .nav-links {
-    display: flex;
-    gap: 6rem;
-    font-weight: 600;
+  display: flex;
+  gap: 6rem;
+  font-weight: 600;
 }
 
-a{
-    text-decoration: none;
-    color: #30081c;
-    width: 100px;
-    height: 30px;
-    padding-top: 6px;
+a {
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  height: 30px;
+  padding-top: 6px;
 }
 
-a:hover{
-    color: rgb(201, 0, 90);
+a:hover {
+  color: rgb(197, 187, 192);
+}
+
+@media (max-width: 1028px) {
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 12rem;
+  }
+  .nav-links {
+    gap: 12px;
+    width: 200px;
+  }
+  .app-name {
+    margin-right: 52px;
+  }
 }

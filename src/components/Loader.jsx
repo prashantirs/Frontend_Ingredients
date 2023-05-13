@@ -3,10 +3,11 @@ import { Oval } from "react-loader-spinner";
 const Loader = () => {
   return (
     <Oval
-      height={80}
-      width={80}
+      height={25}
+      width={60}
       color="#7a3efb"
-      wrapperStyle={{margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}
+      wrapperStyle={{margin: 'auto', display: 'flex', justifyContent: 'center', alignItems: 'center'}}
+      // wrapperStyle={{margin: 'auto',display:'flex'}}
       wrapperClass=""
       visible={true}
       ariaLabel="oval-loading"

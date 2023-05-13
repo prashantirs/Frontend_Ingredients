@@ -1,9 +1,15 @@
 import "./ToDoItem.css";
-
+import DeleteIcon from "@mui/icons-material/Delete";
+import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import { useContext } from "react";
+import { Context } from "../main";
 const ToDoItem = (props) => {
-  const { title, description, isCompleted,id,deleteHandler,updateHandler } = props;
+  const { title, description, isCompleted, id, deleteHandler, updateHandler } =
+    props;
+  const { loading } = useContext(Context);
   const markIsCompleteHandler = () => {
-    updateHandler(id)  
+    updateHandler(id);
   };
   return (
     <div className="task">
@@ -12,8 +18,26 @@ const ToDoItem = (props) => {
         <p>{description}</p>
       </div>
       <div className="task-checkbox">
-        <input type="checkbox" checked={isCompleted} onClick={markIsCompleteHandler}/>
-        <button onClick={()=>{deleteHandler(id)}}>Delete</button>
+        {isCompleted ? (
+          <TaskAltIcon
+            style={{ color: "Green", cursor: "pointer" }}
+            onClick={markIsCompleteHandler}
+          />
+        ) : (
+          <p>
+            <RadioButtonUncheckedIcon
+              style={{ color: "Grey", cursor: "pointer" }}
+              onClick={markIsCompleteHandler}
+            />
+          </p>
+        )}
+        <button
+          onClick={() => {
+            deleteHandler(id);
+          }}
+        >
+          <DeleteIcon />
+        </button>
       </div>
     </div>
   );
